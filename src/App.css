@@ -369,7 +369,8 @@ button:hover {
   .navbar .links {
       display: flex; /* Show links in mobile view */
       flex-direction: column; /* Stack links */
-      align-items: flex-start; /* Align links to the start */
+      align-items: flex-start;
+      display: none;/* Align links to the start */
   }
 
   .testimonial {
