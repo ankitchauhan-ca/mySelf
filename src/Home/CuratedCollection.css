@@ -50,7 +50,7 @@
     width: 100%;
 }
 .h-48 {
-    height: 12rem;
+    height: 30rem;
 }
 .object-cover {
     object-fit: cover;
@@ -79,8 +79,8 @@
 .ml-4 {
     margin-left: 1rem;
 }
-.bg-gray-800 {
-    background-color: #2d3748;
+.bg-img {
+    background-image: url(../public/_image/first.jpg);
 }
 .text-white {
     color: #ffffff;

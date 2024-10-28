@@ -1,6 +1,3 @@
-// src/DesignServices.jsx
-
-import { faBlackboard } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 
 const DesignServices = () => {
@@ -96,25 +93,25 @@ const DesignServices = () => {
     {
       title: 'Brand Identity Design',
       description:
-        'Cras pharetra vel blandit lacus. Arou lobortis diam malesuada lobortis tempus id. Est scelerisque aliquam habitasse faucibus magna nullam est eget.',
+        'Crafting cohesive and memorable brand identities to elevate your business and resonate with your audience.',
       image: 'https://storage.googleapis.com/a1aa/image/X0YwhHfXL8X9WqrsEyya7OzUk8rYNfCflSoWGTXV6aYsTmUnA.jpg',
     },
     {
       title: 'Custom Website Design',
       description:
-        'Cras pharetra vel blandit lacus. Arou lobortis diam malesuada lobortis tempus id. Est scelerisque aliquam habitasse faucibus magna nullam est eget.',
+        'Delivering user-focused and visually appealing websites tailored to your unique requirements and brand story.',
       image: 'https://storage.googleapis.com/a1aa/image/C3aeRQQGR5TCMCE8YOZid074z9ai5HYfk6W6mNicj2kzJTqTA.jpg',
     },
     {
       title: 'Creative Concept Development',
       description:
-        'Cras pharetra vel blandit lacus. Arou lobortis diam malesuada lobortis tempus id. Est scelerisque aliquam habitasse faucibus magna nullam est eget.',
+        'Building engaging and impactful concepts that bring your ideas to life in a way that captivates and informs.',
       image: 'https://storage.googleapis.com/a1aa/image/r75YYpduQaqQCtEZelUD7kBmqXf9YqmBxTMeNJuK179qTmUnA.jpg',
     },
     {
       title: 'Visual Storytelling Solutions',
       description:
-        'Cras pharetra vel blandit lacus. Arou lobortis diam malesuada lobortis tempus id. Est scelerisque aliquam habitasse faucibus magna nullam est eget.',
+        'Creating compelling visual stories that communicate your message and engage your audience effectively.',
       image: 'https://storage.googleapis.com/a1aa/image/auiNQBh4B14VPF9ci1tZhFt812YQUhjBOu50P6FzfsN8kJ1JA.jpg',
     },
   ];
@@ -122,10 +119,10 @@ const DesignServices = () => {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <p style={styles.headerText}>— Our services</p>
+        <p style={styles.headerText}>— Our Services</p>
         <h1 style={styles.headerTitle}>Delivering professional creative services for every design need.</h1>
-        <a style={styles.headerLink} href="#">
-          View more service
+        <a style={styles.headerLink} href="#services">
+          View More Services
         </a>
       </div>
       <div style={styles.services}>
@@ -147,7 +144,7 @@ const DesignServices = () => {
             <div style={styles.serviceContent}>
               <h3 style={styles.serviceTitle}>{service.title}</h3>
               <p style={styles.serviceDescription}>{service.description}</p>
-              <a style={styles.serviceLink} href="#">
+              <a style={styles.serviceLink} href="#read-more" aria-label={`Read more about ${service.title}`}>
                 Read more <i className="fas fa-arrow-right" style={styles.serviceLinkIcon}></i>
               </a>
             </div>

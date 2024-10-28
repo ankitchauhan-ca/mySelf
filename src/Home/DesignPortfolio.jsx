@@ -102,7 +102,7 @@ const DesignPortfolio = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <img
-            src="https://placehold.co/600x400"
+            src="../public/_image/OIP.jpg"
             alt="A laptop displaying a design portfolio with a hand holding a smartphone"
             style={styles.contentImg}
           />
@@ -110,14 +110,11 @@ const DesignPortfolio = () => {
         </div>
         <div style={styles.contentText}>
           <div className="meta">
-            <span>Design</span>
-            <span>September 9, 2024</span>
+            <span>Speaker</span>
           </div>
-          <h2>Innovative and Impactful Design Creations</h2>
+          <h2>Innovative and Impactful Speaker Creations</h2>
           <p>
-            Phasellus eleifend odio ac diam arcu nibh ut commodo sed. Facilisis
-            nibh risus rhoncus egestas. Nulla cras egestas montes nunc mauris
-            tortor.
+          This platform also offers a section dedicated to our speakers, providing insights into their experiences, achievements, and upcoming engagements. By visiting this section, you can stay informed about their latest projects and presentations.
           </p>
         </div>
       </div>

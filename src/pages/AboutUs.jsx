@@ -1,267 +1,272 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartLine, faCode, faCompass } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
-const styles = {
-  body: {
-    fontFamily: 'Inter, sans-serif',
-    margin: 0,
-    padding: 0,
-    backgroundColor: '#f5f7fa',
-    color: '#333',
-  },
-  container: {
-    width: '80%',
-    margin: '0 auto',
-    textAlign: 'center',
-  },
-  header: {
-    padding: '50px 0',
-  },
-  headerTitle: {
-    fontSize: '2.5em',
-    margin: 0,
-  },
-  headerSubtitle: {
-    fontSize: '1.2em',
-    color: '#666',
-  },
-  buttons: {
-    marginTop: '20px',
-  },
-  button: {
-    textDecoration: 'none',
-    color: '#007bff',
-    margin: '0 10px',
-  },
-  mainImage: {
-    margin: '30px 0',
-  },
-  mainImageImg: {
-    width: '100%',
-    maxWidth: '800px',
-  },
-  features: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
-    margin: '50px 0',
-  },
-  feature: {
-    width: '30%',
-    textAlign: 'left',
-    marginBottom: '20px',
-  },
-  featureImg: {
-    width: '100%',
-    height: 'auto',
-  },
-  featureTitle: {
-    fontSize: '1.5em',
-    margin: '10px 0',
-  },
-  featureDescription: {
-    color: '#666',
-  },
-  platform: {
-    margin: '50px 0',
-  },
-  platformText: {
-    fontSize: '1.2em',
-    color: '#666',
-  },
-  services: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
-    margin: '50px 0',
-  },
-  service: {
-    width: '22%',
-    textAlign: 'center',
-    marginBottom: '20px',
-  },
-  serviceIcon: {
-    fontSize: '2em',
-    color: '#007bff',
-  },
-  serviceTitle: {
-    fontSize: '1.2em',
-    margin: '10px 0',
-  },
-  testimonial: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    flexWrap: 'wrap',
-    margin: '50px 0',
-  },
-  testimonialImg: {
-    width: '45%',
-    height: 'auto',
-    marginBottom: '20px',
-  },
-  quote: {
-    width: '45%',
-    textAlign: 'left',
-  },
-  quoteText: {
-    fontSize: '1.2em',
-    color: '#666',
-  },
-  quoteAuthor: {
-    fontSize: '1em',
-    margin: '10px 0',
-  },
-  insights: {
-    margin: '50px 0',
-  },
-  insightsTitle: {
-    fontSize: '2em',
-    margin: '20px 0',
-  },
-  articles: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    flexWrap: 'wrap',
-  },
-  article: {
-    width: '30%',
-    textAlign: 'left',
-    marginBottom: '20px',
-  },
-  articleImg: {
-    width: '100%',
-    height: 'auto',
-  },
-  articleTitle: {
-    fontSize: '1.2em',
-    margin: '10px 0',
-  },
-  articleDescription: {
-    color: '#666',
-  },
-};
-
-function About() {
+const About = () => {
   return (
-    <div style={styles.container}>
-      <div style={styles.header}>
-        <h1 style={styles.headerTitle}>Built for growth, designed for you</h1>
-        <p style={styles.headerSubtitle}>Welcome to Smart</p>
-        <div style={styles.buttons}>
-          <a href="#" style={styles.button}>Learn More</a>
-          <a href="#" style={styles.button}>Request a Demo</a>
-        </div>
-      </div>
-      <div style={styles.mainImage}>
-        <img
-          src="https://storage.googleapis.com/a1aa/image/OijJLPKl3ZJkINs5FjVbmqvLelgbQpq2O1YRfsJI7AZbUSqTA.jpg"
-          alt="Person with colorful background and glasses"
-          style={styles.mainImageImg}
-        />
-      </div>
-      <div style={styles.features}>
-        {[
-          {
-            imgSrc: "https://storage.googleapis.com/a1aa/image/gOAOf9rkn33SSi4IeHC9CX4MUX8k4LeZbgEfe8wrfKhlHlk6E.jpg",
-            title: "Predictive Analytics Insights",
-            description: "Make data-driven decisions with ease."
-          },
-          {
-            imgSrc: "https://storage.googleapis.com/a1aa/image/TWsvfzhPtl1mGaEHxU3YAVeK8tkEcUS8sLK4F2Ju8gHaUSqTA.jpg",
-            title: "Automated Workflow Enabled",
-            description: "Save time with modern tools and efficient workflows."
-          },
-          {
-            imgSrc: "https://storage.googleapis.com/a1aa/image/EwW1vhga7bpaHJEqL01m7Gz2Rz6dKp1ygzUu5kLbNLePKJ1JA.jpg",
-            title: "Enterprise-Grade Data Security",
-            description: "Keep your data safe with top-tier security."
-          }
-        ].map((feature, index) => (
-          <div key={index} style={styles.feature}>
-            <img src={feature.imgSrc} alt={feature.title} style={styles.featureImg} />
-            <h3 style={styles.featureTitle}>{feature.title}</h3>
-            <p style={styles.featureDescription}>{feature.description}</p>
+    <div> 
+      <style>
+      {`
+      .about-container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 50px 0;
+      }
+
+      .header {
+        text-align: center;
+        padding: 20px;
+      }
+
+      .header-title {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+
+      .header-subtitle {
+        font-size: 1.2rem;
+        color: #666;
+      }
+
+      .buttons {
+        margin-top: 20px;
+      }
+
+      .button {
+        text-decoration: none;
+        color: #007bff;
+        margin: 0 10px;
+        padding: 10px 20px;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+      }
+
+      .main-image {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .image {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .features, .services, .testimonial, .insights {
+        text-align: center;
+        margin-top: 40px;
+        padding: 0 10px;
+        color: #333;
+      }
+
+      .features-grid, .services-grid, .articles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .feature, .service, .article {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .feature-image, .article-image {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .feature-title, .service-title, .article-title {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+
+      .feature-description, .service-description, .article-description {
+        color: #666;
+      }
+
+      .service-icon {
+        font-size: 2rem;
+        color: #007bff;
+        margin-bottom: 10px;
+      }
+
+      /* Mobile Responsive Design */
+      @media (max-width: 768px) {
+        .header-title {
+          font-size: 2rem;
+        }
+
+        .header-subtitle {
+          font-size: 1rem;
+        }
+
+        .buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .button {
+          margin: 5px 0;
+          padding: 8px 16px;
+        }
+
+        .features-grid, .services-grid, .articles {
+          grid-template-columns: 1fr;
+        }
+
+        .feature-title, .service-title, .article-title {
+          font-size: 1.1rem;
+        }
+
+        .feature-description, .service-description, .article-description {
+          font-size: 0.9rem;
+        }
+
+        .platform-text {
+          font-size: 1rem;
+        }
+
+        .testimonial-item {
+          padding: 15px;
+          font-size: 0.9rem;
+        }
+      }
+      `}
+      </style>
+      
+      <div className="about-container">
+        <header className="header">
+          <h1 className="header-title">Crafting Experiences with Code</h1>
+          <p className="header-subtitle">Welcome to My Portfolio</p>
+          <div className="buttons">
+            <a href="#projects" className="button">View Projects</a>
+            <a href="#contact" className="button">Contact Me</a>
           </div>
-        ))}
-      </div>
-      <div style={styles.platform}>
-        <p style={styles.platformText}>
-          Our platform is designed for modern businesses looking to optimize and innovate. Experience flexibility and
-          reliability in one place.
-        </p>
-      </div>
-      <div style={styles.services}>
-        {[
-          {
-            icon: faChartLine,
-            title: "Refractional",
-            description: "Get a clear view of your data with our analytics tools."
-          },
-          {
-            icon: faCode,
-            title: "Codecraft",
-            description: "Streamline your coding process with our efficient tools."
-          },
-          {
-            icon: faCompass,
-            title: "7.45 Degrees",
-            description: "Bring accuracy to your projects with our precision tools."
-          }
-        ].map((service, index) => (
-          <div key={index} style={styles.service}>
-            <FontAwesomeIcon icon={service.icon} style={styles.serviceIcon} />
-            <h4 style={styles.serviceTitle}>{service.title}</h4>
-            <p>{service.description}</p>
+        </header>
+
+        <section className="main-image">
+          <motion.img
+            src="https://storage.googleapis.com/a1aa/image/OijJLPKl3ZJkINs5FjVbmqvLelgbQpq2O1YRfsJI7AZbUSqTA.jpg"
+            alt="Creative professional with colorful background"
+            className="image"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+        </section>
+
+        <section className="features">
+          <h2>Core Skills</h2>
+          <div className="features-grid">
+            {[
+              {
+                imgSrc: "https://storage.googleapis.com/a1aa/image/gOAOf9rkn33SSi4IeHC9CX4MUX8k4LeZbgEfe8wrfKhlHlk6E.jpg",
+                title: "Front-End Development",
+                description: "Creating responsive, visually appealing interfaces.",
+              },
+              {
+                imgSrc: "https://storage.googleapis.com/a1aa/image/TWsvfzhPtl1mGaEHxU3YAVeK8tkEcUS8sLK4F2Ju8gHaUSqTA.jpg",
+                title: "Back-End Development",
+                description: "Building robust and scalable server-side logic.",
+              },
+              {
+                imgSrc: "https://storage.googleapis.com/a1aa/image/EwW1vhga7bpaHJEqL01m7Gz2Rz6dKp1ygzUu5kLbNLePKJ1JA.jpg",
+                title: "UI/UX Design",
+                description: "Designing intuitive and engaging user experiences.",
+              },
+            ].map((feature, index) => (
+              <div key={index} className="feature">
+                <img src={feature.imgSrc} alt={feature.title} className="feature-image" />
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-description">{feature.description}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div style={styles.testimonial}>
-        <img
-          src="https://storage.googleapis.com/a1aa/image/UglmD4DQBF7lChi4m3lTbnRlKDMzPw46zdT65Z4Ug7MJlk6E.jpg"
-          alt="Phone with app open"
-          style={styles.testimonialImg}
-        />
-        <div style={styles.quote}>
-          <p style={styles.quoteText}>“Our team’s productivity has skyrocketed thanks to the intuitive design and powerful features.”</p>
-          <h4 style={styles.quoteAuthor}>
-            Jane Bower
-            <br />
-            Lead Software Engineer
-          </h4>
-        </div>
-      </div>
-      <div style={styles.insights}>
-        <h2 style={styles.insightsTitle}>Insights to drive your business forward</h2>
-        <div style={styles.articles}>
-          {[
-            {
-              imgSrc: "https://storage.googleapis.com/a1aa/image/Zyo1k2UCl86yI9D29OmZ8zDtnTziQFVENPRDXszIe02QKJ1JA.jpg",
-              title: "Unlocking Earnings with Webflow: A Guide to Profitable Web Design Projects",
-              description: "Learn how to maximize your earnings with Webflow."
-            },
-            {
-              imgSrc: "https://storage.googleapis.com/a1aa/image/rLxhwwJSCeXiL6y7LRwtyOOOIIFfqSrTdIwYg5bojhWcUSqTA.jpg",
-              title: "Boosting Your Bottom Line: The Business of Buying and Selling Webflow Templates",
-              description: "Discover the business potential of Webflow templates."
-            },
-            {
-              imgSrc: "https://storage.googleapis.com/a1aa/image/Nb82sfaGJRWPEqKLRMoeLeEvIK8wuc8pOWNgeEfBe6bx5L8EA.jpg",
-              title: "The Future of No-Code Development: A Closer Look at Webflow",
-              description: "Explore the future of no-code development with Webflow."
-            }
-          ].map((article, index) => (
-            <div key={index} style={styles.article}>
-              <img src={article.imgSrc} alt={article.title} style={styles.articleImg} />
-              <h3 style={styles.articleTitle}>{article.title}</h3>
-              <p style={styles.articleDescription}>{article.description}</p>
+        </section>
+
+        <section className="services">
+          <h2>Specialized Services</h2>
+          <div className="services-grid">
+            {[
+              {
+                icon: faChartLine,
+                title: "Data Visualization",
+                description: "Transform data into insights with compelling visuals.",
+              },
+              {
+                icon: faCode,
+                title: "Custom Development",
+                description: "Bespoke solutions tailored to project requirements.",
+              },
+              {
+                icon: faCompass,
+                title: "Project Guidance",
+                description: "Consult on best practices for efficient project delivery.",
+              },
+            ].map((service, index) => (
+              <div key={index} className="service">
+                <FontAwesomeIcon icon={service.icon} className="service-icon" />
+                <h4 className="service-title">{service.title}</h4>
+                <p className="service-description">{service.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="testimonial">
+          <h2>Client Testimonials</h2>
+          <div className="testimonial-container">
+            <div className="testimonial-item">
+              <img
+                src="https://storage.googleapis.com/a1aa/image/UglmD4DQBF7lChi4m3lTbnRlKDMzPw46zdT65Z4Ug7MJlk6E.jpg"
+                alt="Client"
+                className="testimonial-image"
+              />
+              <p className="testimonial-text">
+                “The project exceeded our expectations. A seamless process from start to finish.”
+              </p>
+              <p className="testimonial-author">
+                Alex Chen <br />
+                Project Manager
+              </p>
             </div>
-          ))}
-        </div>
+          </div>
+        </section>
+
+        <section className="insights">
+          <h2>Recent Articles</h2>
+          <div className="articles">
+            {[
+              {
+                imgSrc: "https://storage.googleapis.com/a1aa/image/Zyo1k2UCl86yI9D29OmZ8zDtnTziQFVENPRDXszIe02QKJ1JA.jpg",
+                title: "Top Tips for Successful UI/UX Design",
+                description: "Explore key strategies for engaging and effective design.",
+              },
+              {
+                imgSrc: "https://storage.googleapis.com/a1aa/image/rLxhwwJSCeXiL6y7LRwtyOOOIIFfqSrTdIwYg5bojhWcUSqTA.jpg",
+                title: "Responsive Web Design Techniques",
+                description: "Best practices for optimizing across all devices.",
+              },
+              {
+                imgSrc: "../public/_image/OIP.jpg",
+                title: "JavaScript Frameworks for Beginners",
+                description: "A beginner's guide to the most popular frameworks.",
+              },
+            ].map((article, index) => (
+              <div key={index} className="article">
+                <img src={article.imgSrc} alt={article.title} className="article-image" />
+                <h3 className="article-title">{article.title}</h3>
+                <p className="article-description">{article.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );
-}
+};
 
 export default About;
