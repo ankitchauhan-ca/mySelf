@@ -1,0 +1,158 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .container-service {
+    text-align: center;
+    max-width: 800px; /* Maximum width for larger screens */
+    margin: 0 20px;   /* Horizontal margins */
+    width: 100%;      /* Full width on smaller screens */
+    padding: 20px;    /* Padding for some space inside */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+  }
+  
+  .title {
+    font-size: 36px; /* Title size */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .subtitle {
+    font-size: 16px; /* Subtitle size */
+    color: #777;
+    margin-top: 10px;
+  }
+  
+  .testimonial {
+    background-color: #fff; /* Background color for the testimonial */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;      /* Full width */
+    max-width: 600px; /* Maintain max-width for testimonials */
+    height: auto;     /* Allow height to adjust based on content */
+    transition: transform 0.5s ease-in-out;
+    margin: 0 auto;   /* Center the testimonial box */
+  }
+  
+  .testimonial img {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .testimonial-content {
+    margin-left: 20px; /* Margin between image and text */
+    text-align: left;  /* Left align text */
+    flex: 1;           /* Allow content to grow */
+  }
+  
+  .testimonial-content p {
+    font-size: 16px; /* Paragraph size */
+    color: #333;
+    margin: 0;
+  }
+  
+  .testimonial-content .name {
+    font-size: 14px; /* Name size */
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  
+  .testimonial-content .position {
+    font-size: 12px; /* Position size */
+    color: #777;
+  }
+  
+  .testimonial-content .stars {
+    color: #d4a5ff; /* Color for star ratings */
+    margin-top: 10px;
+  }
+  
+  .arrow {
+    position: absolute;
+    top: 50%; /* Center the arrow vertically */
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: 1px solid #bdbcbc;
+    border-radius: 50%;
+    width: 30px;  /* Width of the arrow */
+    height: 30px; /* Height of the arrow */
+    display: flex;
+    justify-content: center; /* Center icon in the arrow */
+    align-items: center;
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .arrow.left {
+    left: -50px; /* Position of the left arrow */
+  }
+  
+  .arrow.right {
+    right: -50px; /* Position of the right arrow */
+  }
+  
+  @media (max-width: 768px) {
+    .testimonial {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      text-align: center;     /* Center text */
+      width: 100%;            /* Full width */
+    }
+    .testimonial-content {
+      margin-left: 0; /* Remove left margin */
+      margin-top: 20px; /* Add margin at the top */
+    }
+    .arrow.left {
+      left: 10px; /* Adjust arrow position */
+    }
+    .arrow.right {
+      right: 10px; /* Adjust arrow position */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title {
+      font-size: 28px; /* Smaller title size */
+    }
+    .subtitle {
+      font-size: 14px; /* Smaller subtitle size */
+    }
+    .testimonial {
+      padding: 15px; /* Smaller padding */
+      width: 100%;   /* Full width */
+      height: auto;  /* Allow height to adjust */
+    }
+    .testimonial img {
+      width: 80px;   /* Smaller image size */
+      height: 80px;  /* Smaller image size */
+    }
+    .testimonial-content p {
+      font-size: 14px; /* Smaller paragraph size */
+    }
+    .testimonial-content .name {
+      font-size: 12px; /* Smaller name size */
+    }
+    .testimonial-content .position {
+      font-size: 10px; /* Smaller position size */
+    }
+    .arrow {
+      width: 25px;   /* Smaller arrow size */
+      height: 25px;  /* Smaller arrow size */
+    }
+  }
+  

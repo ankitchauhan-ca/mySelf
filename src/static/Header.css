@@ -1,0 +1,202 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    min-height: auto;
+    font-size: large;
+    background-color: white;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.3s ease;
+  }
+  
+  .navbar.hidden {
+    top: -100px;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar .logo .green {
+    color: #38a169;
+  }
+  
+  .navbar .logo .gray {
+    color: #4a5568;
+  }
+  
+  .navbar .links {
+    display: none; /* Hidden by default */
+  }
+  
+  .navbar .icons {
+    display: none; /* Hidden by default */
+  }
+  
+  .navbar .menu-button {
+    position: static;
+    display: block; /* Show on mobile */
+    color: #4a5568;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .mobile-menu {
+    display: none; /* Hidden by default */
+  }
+  
+  .mobile-menu.open {
+    display: flex; /* Show when open */
+  }
+  
+  .mobile-menu {
+      flex-direction: column; /* Stack items vertically */
+      padding: 1rem; /* Add padding */
+      background-color: white; /* Background color */
+      width:100%; /* Full width */
+      position:absolute; /* Position absolute to overlay on content */
+      top:60px; /* Position below navbar */
+      left:0; /* Align to left */
+      z-index:999; /* Ensure it appears above other content */
+  }
+  
+  .mobile-menu a {
+      color: #4a5568; /* Link color */
+      text-decoration: none; /* No underline */
+      margin-bottom: .5rem; /* Space between links */
+  }
+  
+  .mobile-menu a:hover {
+      color: #38a169; /* Hover color */
+  }
+  
+  .mobile-menu .icons {
+      display: flex; /* Flex for icons */
+      gap: .5rem; /* Space between icons */
+  }
+  
+  /* Responsive styles for larger screens */
+  @media (min-width:768px) {
+  
+      .navbar .links {
+          display:flex; /* Show links in desktop view */
+          gap:.5rem; /* Space between links */
+          color:#4a5568; 
+      }
+  
+      .navbar .links a {
+          text-decoration:none; 
+          color:inherit; 
+          padding:.5rem ; /* Add padding for better click area*/
+          transition:.3s ease-in-out ; /* Smooth transition for hover effects*/
+      }
+  
+      .navbar .links a:hover {
+          color:#38a169 ; 
+          background-color:#f7fafc ; /* Add background on hover for better visibility*/
+          border-radius:.25rem ;/* Rounded corners on hover*/
+      }
+  
+      .navbar .icons {
+          display:flex ; 
+          gap:.5rem ; 
+          color:#4a5568 ; 
+      }
+  
+      .navbar .menu-button {
+          display:none ; 
+      }
+  
+  }
+  
+  /* Mobile menu styles */
+  @media (max-width:768px) {
+  
+      .mobile-menu.open,
+      .navbar .links.open {
+          display:flex ; 
+          flex-direction : column ; 
+          align-items : flex-start ; 
+          position:absolute ;
+          width :100% ;
+          z-index :999 ; 
+          padding :1rem ;
+          
+      }
+  }
+  
+  /* General icon styles for both mobile and desktop */
+  .icons i {
+      color:#4a5568 ;
+      font-size :1.5rem ;
+  }
+  
+  /* Image container styles for responsiveness */
+  .image-container {
+     position :relative ;
+     display:flex ;
+     justify-content:center ;
+     align-items:center ;
+     margin-top :4rem ;
+     padding :0 ;
+     width :100% ; 
+     overflow:hidden ;/* Ensure images do not overflow container*/
+  }
+  
+  .image-container img {
+     width :100% ; 
+     height:auto ; 
+     object-fit :cover ;/* Maintain aspect ratio of images*/
+  }
+  
+  /* Text overlay styles for responsiveness */
+  .text-overlay {
+     position:absolute ;
+     top :50% ;
+     left :50% ;
+     transform :translate(-50%, -50%) ;
+     text-align:center ;
+     color:white ;
+     text-shadow :2px 2px rgba(0,0,0,.7) ;
+  }
+  
+  /* Animated text styles for responsiveness */
+  .animated-text {
+     font-size :2.5rem ;
+     animation :fadeIn(1.5s ease-in-out forwards) ;
+  }
+  
+  .animated-subtext {
+     font-size :1.5rem ;
+     animation :fadeInUp(2s ease-in-out forwards) ;
+  }
+  
+  /* Keyframes for animations */
+  @keyframes fadeIn {
+     from { opacity :0 ; }
+     to { opacity :1 ; }
+  }
+  
+  @keyframes fadeInUp {
+     from { opacity :0 ; transform :translateY(20px) ; }
+     to { opacity :1 ; transform :translateY(0) ; }
+  }

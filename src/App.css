@@ -1,15 +1,19 @@
+/* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f5f5f5;/* Default background color */
 }
 
 .container {
-  min-height: 100vh;
+  min-height: auto;
+  font-size: large;
   background-color: white;
 }
 
+/* Navbar Styles */
 .navbar {
   position: fixed;
   top: 0;
@@ -42,63 +46,135 @@ body {
   color: #4a5568;
 }
 
-.navbar .links {
-  display: none;
-}
-
+.navbar .links,
 .navbar .icons {
-  display: none;
+  display: none; /* Hidden by default */
 }
 
 .navbar .menu-button {
-  display: block;
+  display: block; /* Show on mobile */
   color: #4a5568;
   font-size: 1.5rem;
   cursor: pointer;
+  margin-right: 10px;
 }
 
+/* Mobile Menu Styles */
 .mobile-menu {
-  display: none;
-  flex-direction: column;
-  padding: 1rem 2rem;
-  background-color: white;
+  display: none; /* Hidden by default */
+  flex-direction: column; /* Stack items vertically */
+  padding: 1rem; /* Add padding */
+  background-color: white; /* Background color */
+  width: 100%; /* Full width */
+  position: absolute; /* Position absolute to overlay on content */
+  top: 60px; /* Position below navbar */
+  left: 0; /* Align to left */
+  z-index: 999; /* Ensure it appears above other content */
+}
+
+.mobile-menu.open {
+  display: flex; /* Show when open */
 }
 
 .mobile-menu a {
-  color: #4a5568;
-  text-decoration: none;
-  margin-bottom: 1rem;
+  color: #4a5568; /* Link color */
+  text-decoration: none; /* No underline */
+  margin-bottom: 0.5rem; /* Space between links */
 }
 
 .mobile-menu a:hover {
-  color: #38a169;
+  color: #38a169; /* Hover color */
 }
 
 .mobile-menu .icons {
-  display: flex;
-  gap: 1rem;
+  display: flex; /* Flex for icons */
+  gap: 0.5rem; /* Space between icons */
 }
 
-.mobile-menu .icons i {
+/* Responsive styles for larger screens */
+@media (min-width: 768px) {
+  .navbar .links {
+      display: flex; /* Show links in desktop view */
+      gap: 0.5rem; /* Space between links */
+      color: #4a5568;
+  }
+
+  .navbar .links a {
+      text-decoration: none;
+      color: inherit;
+      padding: 0.5rem; /* Add padding for better click area */
+      transition: 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+
+  .navbar .links a:hover {
+      color: #38a169;
+      background-color: #f7fafc; /* Add background on hover for better visibility */
+      border-radius: 0.25rem; /* Rounded corners on hover */
+  }
+
+  .navbar .icons {
+      display: flex;
+      gap: 0.5rem;
+      color: #4a5568;
+  }
+
+  .navbar .menu-button {
+      display: none; /* Hide menu button on larger screens */
+  }
+}
+
+/* Mobile menu styles */
+@media (max-width: 768px) {
+  .mobile-menu.open,
+  .navbar .links.open {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      width: 100%;
+      z-index: 999;
+      padding: 1rem;
+  }
+}
+
+/* General icon styles for both mobile and desktop */
+.icons i {
   color: #4a5568;
   font-size: 1.5rem;
 }
 
+/* Image Container Styles */
 .image-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
-  padding: 0 1rem;
+  width: 100%;
+  overflow: hidden; /* Ensure images do not overflow container */
 }
 
-.image-container img {
+/* Image Animation */
+.image {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  object-fit: cover; /* Maintain aspect ratio of images */
+  animation: slideDown 1.4s ease forwards; /* Image comes from the top */
 }
 
+/* Slide Down Animation */
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Text Overlay Styles */
 .text-overlay {
   position: absolute;
   top: 50%;
@@ -106,9 +182,10 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
 }
 
+/* Animated Text Styles */
 .animated-text {
   font-size: 2.5rem;
   animation: fadeIn 1.5s ease-in-out forwards;
@@ -119,59 +196,338 @@ body {
   animation: fadeInUp 2s ease-in-out forwards;
 }
 
-/* Keyframes for animations */
+/* Fade In Animations */
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
+  0% {
     transform: translateY(20px);
+    opacity: 0;
   }
-  to {
+  100% {
+    transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Image Hover Effect */
+.image-container:hover .image {
+  transform: scale(1.05); /* Slightly zoom the image */
+  transition: transform 1s ease; /* Smooth transition */
+}
+
+/* Down Arrow Styles */
+.down-arrow {
+  position: absolute;
+  bottom: 20px; /* Adjust position as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: white;
+  animation: bounce 1.5s infinite; /* Bounce animation */
+}
+
+/* Bounce Animation for Arrow */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
   }
-}
-
-@media (min-width: 768px) {
-  .navbar .links {
-    display: flex;
-    gap: 1.5rem;
-    color: #4a5568;
+  40% {
+    transform: translateY(-10px);
   }
-
-  .navbar .links a {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  .navbar .links a:hover {
-    color: #38a169;
-  }
-
-  .navbar .icons {
-    display: flex;
-    gap: 1rem;
-    color: #4a5568;
-  }
-
-  .navbar .menu-button {
-    display: none;
-  }
-
-  .mobile-menu {
-    display: none;
+  60% {
+    transform: translateY(-5px);
   }
 }
 
-.mobile-menu.open,
-.navbar .links.open {
+
+/* Section Styles */
+.section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.section:nth-child(even) {
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Contact Form Styles */
+.container-contact {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  text-align: center;
+}
+
+.status {
+  color: #333333;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.status span {
+  color: #ff007f;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #222222;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+}
+
+label {
+  font-size: 16px;
+  color: #555555;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+input,
+textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  font-size: 16px;
+  color: #222222;
+  background: transparent;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #ff007f;
+}
+
+button {
+  background-color: #ff007f;
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #cc0066;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container-contact {
+      padding: 40px;
+  }
+
+  h1 {
+      font-size: 2rem;
+  }
+
+  button {
+      padding: 10px 20px;
+      font-size: 14px;
+  }
+
+  .navbar .links {
+      display: flex; /* Show links in mobile view */
+      flex-direction: column; /* Stack links */
+      align-items: flex-start; /* Align links to the start */
+  }
+
+  .testimonial {
+      flex-direction: column; /* Stack items vertically on smaller screens */
+      text-align: center;     /* Center text */
+      width: 100%;            /* Full width */
+  }
+
+  .testimonial-content {
+      margin-left: 0; /* Remove left margin */
+      margin-top: 20px; /* Add margin at the top */
+  }
+
+  .arrow.left,
+  .arrow.right {
+      left: 10px; /* Adjust arrow position */
+      right: 10px; /* Adjust arrow position */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+      font-size: 28px; /* Smaller title size */
+  }
+
+  .subtitle {
+      font-size: 14px; /* Smaller subtitle size */
+  }
+
+  .testimonial {
+      padding: 15px; /* Smaller padding */
+        width: 100%;   /* Full width */
+      height: auto;  /* Allow height to adjust */
+  }
+
+  .testimonial img {
+      width: 80px;   /* Smaller image size */
+      height: 80px;  /* Smaller image size */
+  }
+
+  .testimonial-content p {
+      font-size: 14px; /* Smaller paragraph size */
+  }
+
+  .testimonial-content .name {
+      font-size: 12px; /* Smaller name size */
+  }
+
+  .testimonial-content .position {
+      font-size: 10px; /* Smaller position size */
+  }
+
+  .arrow {
+      width: 25px;   /* Smaller arrow size */
+      height: 25px;  /* Smaller arrow size */
+  }
+
+  .animated-text {
+      font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .animated-subtext {
+      font-size: 1.2rem; /* Adjust font size for smaller screens */
+      margin-top: 5px; /* Adjust margin for smaller screens */
+  }
+}
+
+/* Additional Styles for Specific Components */
+.testimonial {
+  background-color: #fff; /* Background color for the testimonial */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-top: 40px;
+  position: relative;
+  flex-wrap: wrap;
+  width: 100%;      /* Full width */
+  max-width: 600px; /* Maintain max-width for testimonials */
+  height: auto;     /* Allow height to adjust based on content */
+  transition: transform 0.5s ease-in-out;
+  margin: 0 auto;   /* Center the testimonial box */
+}
+
+.testimonial img {
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.testimonial-content {
+  margin-left: 20px; /* Margin between image and text */
+  text-align: left;  /* Left align text */
+  flex: 1;           /* Allow content to grow */
+}
+
+.testimonial-content p {
+  font-size: 16px; /* Paragraph size */
+  color: #333;
+  margin: 0;
+}
+
+.testimonial-content .name {
+  font-size: 14px; /* Name size */
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.testimonial-content .position {
+  font-size: 12px; /* Position size */
+  color: #777;
+}
+
+.testimonial-content .stars {
+  color: #d4a5ff; /* Color for star ratings */
+  margin-top: 10px;
+}
+
+/* Arrow Styles */
+.arrow {
+  position: absolute;
+  top: 50%; /* Center the arrow vertically */
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: 1px solid #bdbcbc;
+  border-radius: 50%;
+  width: 30px;  /* Width of the arrow */
+  height: 30px; /* Height of the arrow */
+  display: flex;
+  justify-content: center; /* Center icon in the arrow */
+  align-items: center;
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.arrow.left {
+  left: -50px; /* Position of the left arrow */
+}
+
+.arrow.right {
+  right: -50px; /* Position of the right arrow */
+}
+
+/* Footer Styles (if applicable) */
+.footer {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.footer a {
+  color: #38a169;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }

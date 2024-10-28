@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+//import '../static/Header.css';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,13 +34,16 @@ function Header() {
           <span className="green">My</span>
           <span className="gray">Webon</span>
         </div>
-        <div className={`links ${menuOpen ? 'open' : ''}`}>
-          <a href="#">Home</a>
-          <a href="#">Portfolio</a>
-          <a href="#">About</a>
-          <a href="#">Service</a>
-          <a href="#">Contact</a>
-        </div>
+        {/* Conditionally render links based on menuOpen state */}
+        {!menuOpen && (
+          <div className={`links`}>
+            <a href="/">Home</a>
+            <a href="portfolio">Portfolio</a>
+            <a href="about">About</a>
+            <a href="service">Service</a>
+            <a href="contact">Contact</a>
+          </div>
+        )}
         <div className="icons">
           <i className="fas fa-shopping-cart"></i>
           <i className="fab fa-twitter"></i>
@@ -49,14 +53,13 @@ function Header() {
           <i className="fas fa-bars"></i>
         </div>
       </nav>
+      {/* Mobile menu */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        <a href="#">Offer</a>
-        <a href="#">Features</a>
+        <a href="#">Home</a>
         <a href="#">Portfolio</a>
-        <a href="#">Reference</a>
         <a href="#">About</a>
-        <a href="#">Team</a>
-        <a href="#">Contact</a>
+        <a href="#">Service</a>
+        <a href="contact">Contact</a>
         <div className="icons">
           <i className="fas fa-shopping-cart"></i>
           <i className="fab fa-twitter"></i>
