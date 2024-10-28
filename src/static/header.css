@@ -1,0 +1,193 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    min-height: 100vh;
+    background-color: white;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: top 0.3s ease;
+  }
+  
+  .navbar.hidden {
+    top: -100px;
+  }
+  
+  .navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar .logo .green {
+    color: #38a169;
+  }
+  
+  .navbar .logo .gray {
+    color: #4a5568;
+  }
+  
+  .navbar .links {
+    display: none;
+  }
+  
+  .navbar .icons {
+    display: none;
+  }
+  
+  .navbar .menu-button {
+    display: block;
+    color: #4a5568;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    background-color: white;
+  }
+  
+  .mobile-menu a {
+    color: #4a5568;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+  
+  .mobile-menu a:hover {
+    color: #38a169;
+  }
+  
+  .mobile-menu .icons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .mobile-menu .icons i {
+    color: #4a5568;
+    font-size: 1.5rem;
+  }
+  
+  .image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    padding: 0 1rem;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  
+  .animated-text {
+    font-size: 2.5rem;
+    animation: fadeIn 1.5s ease-in-out forwards;
+  }
+  
+  .animated-subtext {
+    font-size: 1.5rem;
+    animation: fadeInUp 2s ease-in-out forwards;
+  }
+  
+  /* Hover effect for the text */
+  .text-overlay h1:hover, .text-overlay p:hover {
+    color: #38a169; /* Change text color on hover */
+    transform: scale(1.1); /* Slightly increase size */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Optional hover effect on image to create synergy between image and text */
+  .image-container:hover .animated-text,
+  .image-container:hover .animated-subtext {
+    color: #38a169; /* Apply color change on hover over the entire image */
+    transform: scale(1.05); /* Slightly increase size of text on image hover */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Keyframes for animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .navbar .links {
+      display: flex;
+      gap: 1.5rem;
+      color: #4a5568;
+    }
+  
+    .navbar .links a {
+      text-decoration: none;
+      color: inherit;
+    }
+  
+    .navbar .links a:hover {
+      color: #38a169;
+    }
+  
+    .navbar .icons {
+      display: flex;
+      gap: 1rem;
+      color: #4a5568;
+    }
+  
+    .navbar .menu-button {
+      display: none;
+    }
+  
+    .mobile-menu {
+      display: none;
+    }
+  }
+  
+  .mobile-menu.open,
+  .navbar .links.open {
+    display: flex;
+  }
+  
